@@ -1,5 +1,9 @@
 body {
   background-image: url("../public/background.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -9,9 +13,8 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   overflow: hidden;
-  max-height: 1vh;
+  height: 100vh;
 }
 
 .app_main_div_desktop {
@@ -155,7 +158,6 @@ body {
   align-content: center;
   justify-content: space-evenly;
   gap: 50px;
-  margin-left: -5%;
 }
 
 .gobt_loading {
