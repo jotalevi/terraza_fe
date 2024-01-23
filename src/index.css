@@ -150,6 +150,14 @@ body {
   flex-shrink: 0;
 }
 
+.app_main_div_desktop > .imagebannerdiv {
+  margin-right: 100px !important;
+}
+
+.app_main_div_mobile > .imagebannerdiv {
+  margin-top: 100px;
+}
+
 .imagebannerdiv {
   width: 100%;
   display: flex;
