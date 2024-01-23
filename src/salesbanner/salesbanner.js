@@ -45,7 +45,9 @@ function SalesBanner() {
     }
   };
 
-  console.log(data);
+  const checkIsValid = (mailStr) => {
+    return !!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(mailStr);
+  };
 
   return (
     <>
@@ -53,7 +55,11 @@ function SalesBanner() {
         <div className="input_tab">
           <h1 className="input-label">Correo Electronico</h1>
           <input
-            className="def_input_text"
+            className={
+              checkIsValid(mail)
+                ? "def_input_text"
+                : "def_input_text input_invalid"
+            }
             type="text"
             placeholder="micorreo@domain.com"
             onChange={(e) => {
@@ -89,9 +95,11 @@ function SalesBanner() {
         <div className="input_tab">
           <h1 className="sumary-text">{"Total: $" + 15000 * qty * 1.05}</h1>
           <button
-            className={isLoading ? "gobt_loading" : "gobt"}
+            className={
+              isLoading || !checkIsValid(mail) ? "gobt_loading" : "gobt"
+            }
             onClick={handleClick}
-            disabled={isLoading}
+            disabled={isLoading || !checkIsValid(mail)}
           >
             <h1 className="gobt_text">{isLoading ? "..." : "Comprar"}</h1>
           </button>

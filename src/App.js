@@ -5,7 +5,12 @@ import NavBar from "./navbar/navbar";
 import { isMobile } from "react-device-detect";
 
 function App() {
-  let [currentPage, setCurrentPage] = useState("home");
+  let [currentPage, setPage] = useState("home");
+
+  const setCurrentPage = (pagename) => {
+    console.log(pagename);
+    setPage(pagename);
+  };
 
   if (isMobile) {
     switch (currentPage) {
@@ -29,7 +34,6 @@ function App() {
           </div>
         );
         break;
-
       default:
         return (
           <div className="app_main_div_mobile">
