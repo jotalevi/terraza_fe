@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/tbk_fail",
-    element: <></>,
+    element: <App />,
   },
 ]);
 

@@ -13,14 +13,21 @@ function SalesBanner() {
     if (data && err === "" && !isLoading) formRef.current.submit();
   }, [data]);
 
+  const ticketPrice = 7000;
+  const ivaPerc = 0.02;
+
+  const calculateTotalPrice = (qty) => {
+    return qty * ticketPrice * (1 + ivaPerc);
+  };
+
   const handleClick = async () => {
     setIsLoading(true);
 
     try {
       const response = await fetch(
-        `https://t5d6j7nvp7mt37ab5ft6itytlm0rhqwj.lambda-url.us-east-1.on.aws/?action=init&price=${
-          15000 * qty * 1.05
-        }&qty=${qty}&mail=${mail}`,
+        `http://terrazastgo.com/api/init_transaction?price=${calculateTotalPrice(
+          qty
+        )}&qty=${qty}&mail=${mail}`,
         {
           method: "GET",
           headers: {
@@ -93,7 +100,9 @@ function SalesBanner() {
           </div>
         </div>
         <div className="input_tab">
-          <h1 className="sumary-text">{"Total: $" + 15000 * qty * 1.05}</h1>
+          <h1 className="sumary-text">
+            {"Total: $" + ticketPrice * qty * (1 + ivaPerc)}
+          </h1>
           <button
             className={
               isLoading || !checkIsValid(mail) ? "gobt_loading" : "gobt"
