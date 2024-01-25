@@ -25,7 +25,7 @@ function SalesBanner() {
 
     try {
       const response = await fetch(
-        `http://terrazastgo.com/api/init_transaction?price=${calculateTotalPrice(
+        `https://terrazastgo.com/api/init_transaction?price=${calculateTotalPrice(
           qty
         )}&qty=${qty}&mail=${mail}`,
         {
