@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ThanksBanner from "./thanksbanner/thanksbanner";
+import FailBanner from "./failbanner/failbanner";
 
 const router = createBrowserRouter([
   {
@@ -13,11 +14,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/tbk_success",
-    element: <ThanksBanner></ThanksBanner>,
+    element: <ThanksBanner />,
   },
   {
     path: "/tbk_fail",
-    element: <App />,
+    element: <FailBanner />,
   },
 ]);
 

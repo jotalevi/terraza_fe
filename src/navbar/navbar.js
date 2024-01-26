@@ -5,31 +5,6 @@ function NavBar(props) {
   const [open, setOpen] = useState(false);
   const formRef = useRef("form_ig");
 
-  if (props.empty) {
-    return (
-      <div
-        className={open ? "desktop-nav-bar-show" : "desktop-nav-bar-hidden"}
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          className={isMobile ? "mob_nav_icon" : "navbaricon"}
-        >
-          <path
-            d="M4 8H28V10.6667H4V8ZM4 14.6667H28V17.3333H4V14.6667ZM4 21.3333H28V24H4V21.3333Z"
-            fill="white"
-          />
-        </svg>
-      </div>
-    );
-  }
-
   return (
     <div
       className={open ? "desktop-nav-bar-show" : "desktop-nav-bar-hidden"}

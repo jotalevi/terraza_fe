@@ -1,18 +1,19 @@
 import NavBar from "../navbar/navbar";
 import { isMobile } from "react-device-detect";
 
-function ThanksBanner() {
+function FailBanner(props) {
   if (isMobile) {
     return (
       <div className="app_main_div_mobile">
         <NavBar />
         <div className="thanks_div">
-          <h1 className="thanks_font_data">Genial!</h1>
           <h1 className="thanks_font_data">
-            Ya enviamos las entradas a su correo.
+            No pudimos completar la transacción.
           </h1>
+          <h1 className="thanks_font_data">Ningun cobro será efectuado.</h1>
           <h1 className="thanks_font_data">
-            !Te esperamos aca en Terraza el proximo sabado!
+            Caso veas un descuento en su cuenta, este será anulado a la
+            brevedad.
           </h1>
         </div>
       </div>
@@ -22,12 +23,13 @@ function ThanksBanner() {
       <div className="app_main_div_desktop">
         <NavBar />
         <div className="thanks_div">
-          <h1 className="thanks_font_data">Genial!</h1>
           <h1 className="thanks_font_data">
-            Ya enviamos las entradas a su correo.
+            No pudimos completar la transacción.
           </h1>
+          <h1 className="thanks_font_data">Ningun cobro será efectuado.</h1>
           <h1 className="thanks_font_data">
-            !Te esperamos aca en Terraza el proximo sabado!
+            Caso veas un descuento en su cuenta, este será anulado a la
+            brevedad.
           </h1>
         </div>
       </div>
@@ -35,4 +37,4 @@ function ThanksBanner() {
   }
 }
 
-export default ThanksBanner;
+export default FailBanner;
